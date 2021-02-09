@@ -1,0 +1,20 @@
+cd docker
+
+docker-compose up -b --build
+
+sudo chown mateusz:mateusz app/ -R
+
+docker-compose up -d 
+
+docker exec --help
+docker exec -it php74-container bash
+
+docker-compose run --rm php74-service php bin/console doctrine:database:create
+
+docker exec -it mysql8-container bash
+
+mysql -uroot -psecret 
+
+docker-compose run --rm node-service yarn install
+
+
